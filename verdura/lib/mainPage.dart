@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:verdura/guidePage.dart';
 import 'package:verdura/comunityPage.dart';
 import 'package:verdura/marketPage.dart';
@@ -30,9 +31,9 @@ class MyApp extends StatelessWidget {
       ),
       home: MainPage(),
       routes: {
-        '/guide' : (context) => guidePage(),
-        '/comunity' : (context) => comunityPage(),
-        '/market' : (context) => marketPage()
+        '/guide': (context) => guidePage(),
+        '/comunity': (context) => comunityPage(),
+        '/market': (context) => marketPage()
       },
     );
   }
@@ -140,7 +141,6 @@ final dummyItems2 = [
   'http://file3.instiz.net/data/cached_img/upload/2019/04/05/12/da42ac52aaf301f10a75002e4584f594.jpg',
   'http://file3.instiz.net/data/cached_img/upload/2019/02/07/5/6aa9314610ed6491ca497c1b3429149a.jpg'
 ];
-
 Widget _buildMiddle() {
   return CarouselSlider(
     options: CarouselOptions(height: 150.0, autoPlay: true),
@@ -162,7 +162,6 @@ Widget _buildMiddle() {
     }).toList(),
   );
 }
-
 Widget _buildBottom() {
   return ListView(
     physics: NeverScrollableScrollPhysics(),
@@ -200,34 +199,6 @@ Widget _buildBottom() {
   );
 }
 
-Widget _secondTopBuild(){
-  return Column(
-    children: [
-      SizedBox(
-        height: 20,
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('내 정보 수정하기', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),),
-        ],
-      ),
-      SizedBox(
-        height: 10,
-      ),
-      CircleAvatar(
-        child: Icon(Icons.person, size: 80, color: Colors.white,),
-        backgroundColor: Colors.grey,
-        maxRadius: 50,
-      ),
-      TextButton(
-          onPressed: (){}, 
-          child: Text('프로필 사진 바꾸기')
-      ),
-
-    ],
-  );
-}
 
 class Page1 extends StatelessWidget {
   @override
@@ -244,7 +215,59 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [_secondTopBuild()],
+      children: [
+        SizedBox(
+          height: 80,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '내 정보 수정하기',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        CircleAvatar(
+          child: Icon(
+            Icons.person,
+            size: 80,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.grey,
+          maxRadius: 50,
+        ),
+        TextButton(onPressed: () {}, child: Text('프로필 사진 바꾸기')),
+        SizedBox(
+          height: 20,
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              minimumSize: Size(230, 50), //width, height
+              backgroundColor: Color.fromRGBO(0, 0, 0, 1)
+          ),
+          onPressed: () {},
+          child: Text('로그인'),
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                minimumSize: Size(230, 50), //width, height
+                backgroundColor: Color.fromRGBO(0, 0, 0, 1)
+            ),
+            onPressed: () async {
+              final url = Uri.parse('https://github.com/xooslo/Verdura');
+              if (await canLaunchUrl(url)) {
+                launchUrl(url, mode: LaunchMode.externalApplication);
+              }
+            },
+            child: Text('개발과정 보기')),
+      ],
     );
   }
 }
@@ -266,13 +289,13 @@ class _MyHomePageState extends State<MainPage> {
   var appbarColor = Color.fromRGBO(27, 107, 35, 1);
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     print('MainPage initState()');
   }
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     print('MainPage dispose()');
   }
@@ -297,9 +320,9 @@ class _MyHomePageState extends State<MainPage> {
           onTap: (index) {
             setState(() {
               _index = index;
-              if(index==1){
+              if (index == 1) {
                 appbarColor = Colors.black;
-              }else{
+              } else {
                 appbarColor = Color.fromRGBO(27, 107, 35, 1);
               }
             });
