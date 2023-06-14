@@ -5,6 +5,7 @@ import 'package:verdura/comunityPage.dart';
 import 'package:verdura/marketPage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:verdura/loginPage.dart';
+import 'package:verdura/mainPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: MainPage(),
+      home: MainPage2(),
       routes: {
         '/guide': (context) => guidePage(),
         '/comunity': (context) => comunityPage(),
@@ -48,13 +49,6 @@ final dummyItems = [
   'assets/plant_home_2.jpg'
 ];
 
-final dummyItems2 = [
-  'http://file3.instiz.net/data/cached_img/upload/2019/04/03/0/88fcfb7eefdd127ba9013d1294ff8a17.jpg',
-  'http://file3.instiz.net/data/cached_img/upload/2019/04/05/12/52f714faa9e90d2c4d483dba678bd718.jpg',
-  'http://file3.instiz.net/data/cached_img/upload/2019/04/05/12/4fbf8364c252de14e4123a798a4d6ab3.jpg',
-  'http://file3.instiz.net/data/cached_img/upload/2019/04/05/12/da42ac52aaf301f10a75002e4584f594.jpg',
-  'http://file3.instiz.net/data/cached_img/upload/2019/02/07/5/6aa9314610ed6491ca497c1b3429149a.jpg'
-];
 Widget _buildMiddle() {
   return CarouselSlider(
     options: CarouselOptions(height: 150.0, autoPlay: true),
@@ -130,7 +124,7 @@ class Page1 extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () async {
-                      final result = await Navigator.pushNamed(context, '/login');
+                      final result = await Navigator.pushNamed(context, '/guide');
                       print(result);
                     },
                     icon: Icon(
@@ -155,7 +149,7 @@ class Page1 extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () async {
-                      final result = await Navigator.pushNamed(context, '/login');
+                      final result = await Navigator.pushNamed(context, '/comunity');
                       print(result);
                     },
                     icon: Icon(
@@ -180,7 +174,7 @@ class Page1 extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () async {
-                      final result = await Navigator.pushNamed(context, '/login');
+                      final result = await Navigator.pushNamed(context, '/market');
                       print(result);
                     },
                     icon: Icon(
@@ -218,7 +212,7 @@ class Page1 extends StatelessWidget {
 }
 
 class Page2 extends StatelessWidget {
-@override
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -247,10 +241,7 @@ class Page2 extends StatelessWidget {
           maxRadius: 50,
         ),
         TextButton(
-            onPressed: () async {
-              final result = await Navigator.pushNamed(context, '/login');
-              print(result);
-            },
+            onPressed: () {},
             child: Text('프로필 사진 바꾸기', style: TextStyle(color: Colors.blue))),
         SizedBox(
           height: 20,
@@ -261,10 +252,11 @@ class Page2 extends StatelessWidget {
               backgroundColor: Color.fromRGBO(0, 0, 0, 1)
           ),
           onPressed: () async {
-            final result = await Navigator.pushNamed(context, '/login');
-            print(result);
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) => MainPage()));
           },
-          child: Text('로그인'),
+          child: Text('로그아웃'),
         ),
         SizedBox(
           height: 8,
@@ -287,14 +279,14 @@ Future<void> _launchUrl() async {
   }
 }
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class MainPage2 extends StatefulWidget {
+  const MainPage2({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MyHomePageState();
+  State<MainPage2> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MainPage> {
+class _MyHomePageState extends State<MainPage2> {
   var _index = 0;
 
   var _pages = [
@@ -306,13 +298,13 @@ class _MyHomePageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    print('MainPage initState()');
+    print('AfterPage initState()');
   }
 
   @override
   void dispose() {
     super.dispose();
-    print('MainPage dispose()');
+    print('AfterPage dispose()');
   }
 
   @override

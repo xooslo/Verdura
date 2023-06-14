@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: guidePage(),
     );
@@ -38,7 +38,48 @@ class guidePage extends StatefulWidget {
 
 class _guidePageState extends State<guidePage> {
   @override
+  void initState(){
+    super.initState();
+    print('SecondPage initState()');
+  }
+
+  @override
+  void dispose(){
+    super.dispose();
+    print('SecondPage dispose()');
+  }
+
+  var appbarColor = Color.fromRGBO(27, 107, 35, 1);
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return
+    Scaffold(
+      backgroundColor: appbarColor,
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            leading: IconButton(
+              onPressed: (){
+                Navigator.pop(context, '가이드 페이지 ok');
+              },
+              icon: Icon(Icons.navigate_before),
+            ),
+            pinned: true,
+            expandedHeight: 200.0,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text('Verdura Guide', style: TextStyle(color: Colors.white,),),
+              centerTitle: true,
+              background: Image.network('https://img.freepik.com/free-photo/aerial-view-of-green-forest_144627-45271.jpg', fit: BoxFit.cover,),
+            ),
+          ),
+          SliverFillRemaining(
+            child: Center(
+              child: Text('center', style: TextStyle(color: Colors.white, fontSize: 25),),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
