@@ -123,6 +123,14 @@ class Page1 extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
+          Text(
+            '이달의 사진',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          _buildMiddle(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -200,17 +208,6 @@ class Page1 extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            '이달의 사진',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          _buildMiddle(),
           _buildBottom()],
       ),
     );

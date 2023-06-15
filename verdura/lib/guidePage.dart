@@ -55,7 +55,6 @@ class _guidePageState extends State<guidePage> {
   Widget build(BuildContext context) {
     return
     Scaffold(
-      backgroundColor: appbarColor,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -74,9 +73,11 @@ class _guidePageState extends State<guidePage> {
             ),
           ),
           SliverFillRemaining(
-            child: Center(
-              child: Text('center', style: TextStyle(color: Colors.white, fontSize: 25),),
-            ),
+            child: Column(
+              children: [
+
+              ],
+            )
           ),
         ],
       ),
