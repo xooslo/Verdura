@@ -150,6 +150,10 @@ class _guidePageState extends State<guidePage> {
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: InkWell(
+                      onTap: () async {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                            TableYaga()));
+                      },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
@@ -162,6 +166,10 @@ class _guidePageState extends State<guidePage> {
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: InkWell(
+                      onTap: () async {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>
+                            Yaga()));
+                      },
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
@@ -221,32 +229,6 @@ class _AlboMonsteraState extends State<AlboMonstera> {
             Text(
               '몬스테라 알보 바리에가타',
               style: TextStyle(fontSize: 20, color: Colors.grey),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.search), Text('MORE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.send), Text('ROUTE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.share), Text('SHARE')],
-                ),
-              ],
             ),
             SizedBox(
               height: 20,
@@ -340,32 +322,6 @@ class _MonsteraState extends State<Monstera> {
             Text(
               '몬스테라 델리시오사',
               style: TextStyle(fontSize: 20, color: Colors.grey),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.search), Text('MORE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.send), Text('ROUTE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.share), Text('SHARE')],
-                ),
-              ],
             ),
             SizedBox(
               height: 20,
@@ -469,32 +425,6 @@ class _CaladeaState extends State<Caladea> {
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.search), Text('MORE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.send), Text('ROUTE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.share), Text('SHARE')],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
               children: [
                 SizedBox(
                   width: 15,
@@ -562,7 +492,7 @@ class _DayukState extends State<Dayuk> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('제옥(다육이) 키우는 법', style: TextStyle(color: appbarColor),),
+        title: Text('제옥 키우는 법', style: TextStyle(color: appbarColor),),
         centerTitle: true,
         leading: IconButton(
           onPressed: () {
@@ -575,7 +505,7 @@ class _DayukState extends State<Dayuk> {
         child: Column(
           children: [
             Image.asset(
-              'assets/caladea.jpeg',
+              'assets/dayuk.png',
               width: 400,
             ),
             SizedBox(
@@ -593,32 +523,6 @@ class _DayukState extends State<Dayuk> {
               height: 20,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.search), Text('MORE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.send), Text('ROUTE')],
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.share), Text('SHARE')],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
               children: [
                 SizedBox(
                   width: 15,
@@ -627,14 +531,14 @@ class _DayukState extends State<Dayuk> {
                 SizedBox(
                   width: 10,
                 ),
-                Text('칼라데아 퓨전화이트란?',
+                Text('제옥이란?',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
               ],
             ),
             Container(
               width: 360,
               child: Text(
-                  '녹색과 흰색의 대비가 아름다운 칼라데아 퓨전화이트는 잎 뒷면이 마젠타색을 띠는 반전 매력을 소유한 마란타과의 식물입니다. 칼라데아의 한 종류답게 퓨전화이트 또한 따뜻한 온도와 촉촉한 공기를 좋아합니다. 퓨전화이트 하나만으로도 존재감이 뛰어나 온 집 안을 분위기 있게 만들어줘요. 다른 칼라데아들보다 잎이 얇은 편이라 세심하게 습도를 조절해주어야 하는 식물이지만, 아름다운 외모와 희소성 덕분에 아주 인기가 많은 품종이랍니다. 또한 독성이 없어 반려동물을 기르시는 집사님들도 걱정 없이 키울 수 있는 식물이랍니다!',
+                  '제옥은 마치 코뿔소를 연상시키는 특이한 모양의 다육식물입니다. 흙 가까이에서 뽈록 솟아오른 돌 같이 보이기도 해 서양에서는 `Split Rock`이라고 불려요. 이러한 특이한 외형은 제옥이 살아남기 위해 특별하게 진화된 결과물이에요. 남아프리카의 건조한 사막지대에서 온 제옥은 주변 바위틈이나 자갈들 사이에서 성장하는데, 다른 동물들로부터 자신의 몸을 보호하기 위해 주변 색과 비슷한 색과 질감으로 자란다고 해요. 가을에 새 잎을 낼 때 제옥은 파충류처럼 `탈피`를 해요. 오래된 잎이 벌어지면 그 사이에서 새 잎이 나오는 신기한 식물이랍니다.',
                   style: TextStyle(
                     fontSize: 17,
                   )),
@@ -651,14 +555,14 @@ class _DayukState extends State<Dayuk> {
                 SizedBox(
                   width: 10,
                 ),
-                Text('칼라데아 관리를 위한 팁',
+                Text('제옥 관리를 위한 팁',
                   style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
               ],
             ),
             Container(
               width: 360,
               child: Text(
-                '1. 물은 평균 주 1~2회, 흙 표면부터 3cm까지 마르면 듬뿍 주세요\n \n2. 반양지 식물으로 하루 2~3시간 정도의 은은한 햇빛이 필요해요\n \n3. 권장 습도는 70% 이상으로 주변 공기를 촉촉하게 관리해주세요\n \n4. 16~25℃의 온도에서 잘 자라요',
+                '1. 물은 평균 월 1회 이하, 통통한 잎이 살짝 쭈글해지면 듬뿍 주세요\n \n2. 양지 식물으로 하루 6시간 이상 밝은 햇빛이 필요해요\n \n3. 권장 습도는 40% 이하로 주변 공기를 건조하게 관리해주세요\n \n4. 18~27℃의 온도에서 잘 자라요',
                 style: TextStyle(fontSize: 17),),
             ),
             SizedBox(
@@ -669,4 +573,201 @@ class _DayukState extends State<Dayuk> {
       ),
     );
   }
+}
+
+class TableYaga extends StatefulWidget {
+  const TableYaga({super.key});
+
+  @override
+  State<TableYaga> createState() => _TableYagaState();
+}
+
+class _TableYagaState extends State<TableYaga> {
+  var appbarColor = Color.fromRGBO(27, 107, 35, 1);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('테이블야자 키우는 법', style: TextStyle(color: appbarColor),),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context, 'tableYaga test');
+          },
+          icon: Icon(Icons.navigate_before, color: appbarColor,),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/table-yaga.jpeg',
+              width: 400,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              '테이블야자',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              'Chamaedorea elegans',
+              style: TextStyle(fontSize: 20, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Icon(Icons.auto_awesome, size: 40,),
+                SizedBox(
+                  width: 10,
+                ),
+                Text('테이블 야자란?',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
+              ],
+            ),
+            Container(
+              width: 360,
+              child: Text(
+                  '테이블 야자의 속명 Chamaedorea는 ‘난쟁이(dwarf)ʼ와 ‘선물(gift)ʼ이라는 그리스어에서 유래되었어요. 테이블 야자는 그 이름처럼 선물하기에 아주 좋은 식물이에요. 또한 빛이 적은 곳에서도 잘 자라고 다양한 환경에 대한 적응력이 좋아서 키우기 쉬운 식물이에요. 그래서 초보 가드너들에 많이 추천하는 식물이랍니다. 게다가 독성이 없어서 반려동물에게 안전하고 각종 화학물질을 제거하는 공기정화 능력이 뛰어난 식물이라 오랫동안 사랑받고 있어요.',
+                  style: TextStyle(
+                    fontSize: 17,
+                  )),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 15,
+                ),
+                Icon(Icons.auto_awesome, size: 40,),
+                SizedBox(
+                  width: 10,
+                ),
+                Text('테이블야자 관리를 위한 팁',
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
+              ],
+            ),
+            Container(
+              width: 360,
+              child: Text(
+                '1. 물은 평균 주 1~2회, 흙 표면부터 3cm까지 마르면, 듬뿍 주세요\n \n2. 반음지 식물으로 하루 2~3시간 정도의 은은한 햇빛이 필요해요\n \n3. 권장 습도는 40~70% 으로 주변 공기가 건조해지지 않도록 관리해주세요\n \n4. 21~25℃의 온도에서 잘 자라요',
+                style: TextStyle(fontSize: 17),),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Yaga extends StatefulWidget {
+  const Yaga({super.key});
+
+  @override
+  State<Yaga> createState() => _YagaState();
+}
+
+class _YagaState extends State<Yaga> {
+  @override
+    var appbarColor = Color.fromRGBO(27, 107, 35, 1);
+
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Text('아레카 야자 키우는 법', style: TextStyle(color: appbarColor),),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context, 'Yaga test');
+            },
+            icon: Icon(Icons.navigate_before, color: appbarColor,),
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/table-yaga-2.jpeg',
+                width: 400,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                '아레카 야자',
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'Chrysalidocarpus lutescens',
+                style: TextStyle(fontSize: 20, color: Colors.grey),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(Icons.auto_awesome, size: 40,),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('아레카 야자란?',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
+                ],
+              ),
+              Container(
+                width: 360,
+                child: Text(
+                    '아레카야자는 NASA가 선정한 실내 공기 정화 1위 식물이에요. 독성이 없어서 반려동물에게도 안전한 아레카야자는 빛이 적은 곳에서도 잘 자라 초보가드너도 어려움 없이 키울 수 있는 식물입니다. 증산량이 많아 천연 가습기 역할도 훌륭하게 해낸답니다. 마다가스카르에서 온 아레카 야자는 따뜻한 곳을 좋아해요. 강한 직사광선보다는 은은한 간접적인 빛을 좋아하고 다양한 환경에 잘 적응하는 식물이랍니다.',
+                    style: TextStyle(
+                      fontSize: 17,
+                    )),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Icon(Icons.auto_awesome, size: 40,),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('아레카 야자 관리를 위한 팁',
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),)
+                ],
+              ),
+              Container(
+                width: 360,
+                child: Text(
+                  '1. 물은 평균 주 1~2회, 흙 표면부터 3cm까지 마르면, 듬뿍 주세요\n \n2. 반양지 식물으로 하루 2~3시간 정도의 은은한 햇빛이 필요해요\n \n3. 권장 습도는 40~70% 으로 주변 공기가 건조해지지 않도록 관리해주세요\n \n4. 18~24℃의 온도에서 잘 자라요',
+                  style: TextStyle(fontSize: 17),),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
 }
