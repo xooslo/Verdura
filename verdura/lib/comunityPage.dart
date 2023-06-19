@@ -37,8 +37,23 @@ class comunityPage extends StatefulWidget {
 }
 
 class _comunityPageState extends State<comunityPage> {
+  var appbarColor = Color.fromRGBO(27, 107, 35, 1);
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: appbarColor,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context, '가이드 페이지 ok');
+          },
+          icon: Icon(Icons.navigate_before, color: Colors.white,),
+        ),
+        title: Text('Verdura Comunity', style: TextStyle(color: Colors.white,),),
+        centerTitle: true,
+      ),
+
+    );
   }
 }
