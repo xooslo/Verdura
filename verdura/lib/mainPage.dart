@@ -220,35 +220,17 @@ class Page2 extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: 80,
+          height: 190,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '내 정보 수정하기',
+              '내 정보',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
           ],
         ),
-        SizedBox(
-          height: 10,
-        ),
-        CircleAvatar(
-          child: Icon(
-            Icons.person,
-            size: 80,
-            color: Colors.white,
-          ),
-          backgroundColor: Colors.grey,
-          maxRadius: 50,
-        ),
-        TextButton(
-            onPressed: () async {
-              final result = await Navigator.pushNamed(context, '/login');
-              print(result);
-            },
-            child: Text('프로필 사진 바꾸기', style: TextStyle(color: Colors.blue))),
         SizedBox(
           height: 20,
         ),

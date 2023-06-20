@@ -37,8 +37,39 @@ class marketPage extends StatefulWidget {
 }
 
 class _marketPageState extends State<marketPage> {
+  var appbarColor = Color.fromRGBO(27, 107, 35, 1);
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context, '마 페이지 ok');
+          },
+          icon: Icon(Icons.navigate_before, color: appbarColor,),
+        ),
+        title: Text('Verdura Market', style: TextStyle(color: appbarColor,),),
+        centerTitle: true,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('♡ 서비스 준비중 ♡',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: appbarColor,
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
